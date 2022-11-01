@@ -60,7 +60,7 @@
             </p-autoComplete>
         </div>
         <div class="field col-12 md:col-6">
-            <h6>Seleccione su especialidades</h6>
+            <h6>Seleccione especialidad</h6>
             <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries"
                 (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
             </p-autoComplete>
@@ -74,14 +74,14 @@
             <h6>Hora Establecida</h6>
             <span class="p-float-label">
                 <input type="text" id="establecimiento" pInputText [(ngModel)]="value7">
-                <label for="inputtext">Establecimiento</label>
+                <label for="inputtext">Hora</label>
             </span>
         </div>
         <div class="field col-12 md:col-4">
             <h6>Turno</h6>
             <span class="p-float-label">
                 <input type="text" id="espcialidad" pInputText [(ngModel)]="value8">
-                <label for="inputtext">Espcialidad</label>
+                <label for="inputtext">Turno</label>
             </span>
         </div>
 
