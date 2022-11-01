@@ -1,0 +1,91 @@
+<div class="card">
+    <h5>DATOS PACIENTE</h5>
+    <p>Ingrese los datos del Paciente</p>
+    <div class="grid p-fluid mt-3">
+        <div class="field col-12 md:col-4">
+            <span class="p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText placeholder="Código - DNI">
+            </span>
+        </div>
+    </div>
+    <div class="grid p-fluid mt-3">
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="nombres" pInputText [(ngModel)]="value1">
+                <label for="inputtext">Nombres</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="apellidos" pInputText [(ngModel)]="value2">
+                <label for="inputtext">Apellidos</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="sexo" pInputText [(ngModel)]="value3">
+                <label for="inputtext">Sexo</label>
+            </span>
+        </div>
+    </div>
+    <div class="grid p-fluid mt-3">
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="direccion" pInputText [(ngModel)]="value4">
+                <label for="inputtext">Dirrección</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="nacionalidad" pInputText [(ngModel)]="value5">
+                <label for="inputtext">Nacionalidad</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <input type="text" id="fechNacimiento" pInputText [(ngModel)]="value6">
+                <label for="inputtext">Fecha de Nacimiento</label>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <h5>DATOS CITA</h5>
+    <div class="grid p-fluid mt-3">
+        <div class= "field col-12 md:col-6">
+            <h6>Seleccione su establecimiento</h6>
+            <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+            </p-autoComplete>
+            
+        </div> 
+        <div class= "field col-12 md:col-6">
+            <h6>Seleccione su especialidades</h6>
+            <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+            </p-autoComplete>
+        </div> 
+        
+        <div class="field col-12 md:col-4">
+            <h6>Seleccione la fecha propuesta</h6>
+            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="field col-12 md:col-4">
+            <h6>Hora Establecida</h6>
+            <span class="p-float-label">
+                <input type="text" id="establecimiento" pInputText [(ngModel)]="value7">
+                <label for="inputtext">Establecimiento</label>
+            </span>
+        </div>
+        <div class="field col-12 md:col-4">
+            <h6>Turno</h6>
+            <span class="p-float-label">
+                <input type="text" id="espcialidad" pInputText [(ngModel)]="value8">
+                <label for="inputtext">Espcialidad</label>
+            </span>
+        </div>
+        
+    </div>
+    
+    
+    
+</div>

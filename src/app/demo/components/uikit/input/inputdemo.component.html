@@ -1,0 +1,213 @@
+<div class="grid p-fluid">
+	<div class="col-12 md:col-6">
+		<div class="card">
+			<h5>Datos Personales</h5>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+					<input type="text" pInputText placeholder="Nombres">
+				</div>
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+					<input type="text" pInputText placeholder="Apellidos"/>
+				</div>
+			</div>
+			<br/>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+					<input type="text" pInputText placeholder="DNI"/>
+				</div>
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+					<input type="text" pInputText placeholder="Edad"/>
+				</div>
+			</div>		
+
+			<h5>Datos Parentales</h5>
+			<h6>Padre</h6>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<span class="p-input-icon-left">
+					<i class="pi pi-user"></i>
+					<input type="text" pInputText placeholder="Nombres">
+					</span>
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<span class="p-input-icon-left">
+					<i class="pi pi-user"></i>
+					<input type="text" pInputText placeholder="Apellidos"/>
+					</span>
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<input type="text" pInputText placeholder="Edad"/>
+				</div>
+			</div>
+			<h6>Madre</h6>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<span class="p-input-icon-left">
+					<i class="pi pi-user"></i>
+					<input type="text" pInputText placeholder="Nombres">
+					</span>
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<span class="p-input-icon-left">
+					<i class="pi pi-user"></i>
+					<input type="text" pInputText placeholder="Apellidos"/>
+					</span>
+				</div>
+				<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+					<input type="text" pInputText placeholder="Edad"/>
+				</div>
+			</div>
+			<br/>
+			<h5>Medio de Contacto</h5>
+			<br/>
+			<div class="grid formgrid">
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+				<span class="p-float-label">
+					<input id="float-input" type="text" pInputText>
+					<label for="float-input">Número de celular</label>
+				</span>
+				</div>
+				<div class="col-12 mb-2 lg:col-6 lg:mb-0">
+				<span class="p-float-label">
+					<input id="float-input" type="text" pInputText>
+					<label for="float-input">Número de Teléfono</label>
+				</span>
+				</div>
+			</div>
+			
+			<br/>
+			<br/>
+			<span class="p-float-label">
+				<input id="float-input" type="text" pInputText>
+				<label for="float-input">Correo Electrónico</label>
+			</span>
+			<br/>
+			<br/>
+			<span class="p-float-label">
+				<input id="float-input" type="text" pInputText>
+				<label for="float-input">Domicilio</label>
+			</span>
+		</div>
+
+	</div>
+
+	<div class="col-12 md:col-6">
+		<div class="card">
+			<h5>Antecedentes Patológicos</h5>
+			<div class="grid formgrid">
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Diabates" [(ngModel)]="valCheck" id="ny"></p-checkbox>
+						<label for="ny">Diabetes</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Varicela" [(ngModel)]="valCheck" id="sf"></p-checkbox>
+						<label for="sf">Varicela</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Los Rubeola" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Rubeola</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Sarampion" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Sarampion</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Uncinarias" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Uncinarias</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group1" value="Cisticercosis" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Cisticercosis</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<h5>Enfermedades de transmisición Sexual</h5>
+			<br/>
+			<div class="grid formgrid">
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="Sifilis" [(ngModel)]="valCheck" id="ny"></p-checkbox>
+						<label for="ny">Sifilis</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="VIH-SIDA" [(ngModel)]="valCheck" id="sf"></p-checkbox>
+						<label for="sf">VIH - SIDA</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="Ladillas" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Ladillas</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="Clamidia" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Clamidia</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="VPH" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Virus del Papiloma Humano</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="Herpes" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Herpes</label>
+					</div>
+				</div>
+				<div class="col-12 md:col-4">
+					<div class="field-checkbox">
+						<p-checkbox name="group2" value="Gonorrea" [(ngModel)]="valCheck" id="la"></p-checkbox>
+						<label for="la">Gonorrea</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<h5>Datos Adicionales</h5>
+			<div class= "field col-12">
+				<h6>Seleccione su Nacionalidad</h6>
+            	<p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+            	</p-autoComplete>
+			</div>
+			<div class= "field col-12">
+				<h6>Ingrese su Fecha de Nacimiento</h6>
+            	<p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col-12 md:col-6">
+		<div class="card">
+			<h5>Autorizo el manejo interno y externo de mis datos personales</h5>
+			<div class="grid">
+				<div class="col-12 md:col-6">
+					<p-inputSwitch [(ngModel)]="valSwitch"></p-inputSwitch>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
