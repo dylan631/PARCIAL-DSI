@@ -32,7 +32,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Administración de Reportes Médicos',
                 items: [
                     { label: 'Buscar Historial Clínico', icon: 'pi pi-fw pi-search', routerLink: ['/'] },
-                    { label: 'Registrar Documentos', icon: 'pi pi-fw pi-inbox', routerLink: ['/'] },
+                    { label: 'Registrar Documentos', icon: 'pi pi-fw pi-inbox', routerLink: ['/uikit/file'] },
                     { label: 'Actualización Reportes Médicos', icon: 'pi pi-fw pi-save', routerLink: ['/'] }
                 ]
             },

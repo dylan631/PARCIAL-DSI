@@ -1,9 +1,14 @@
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
 <div class="grid">
     <div class="col-12">
         <div class="card">
-            <h5>Advanced</h5>
-            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-                          [multiple]="true" accept="image/*" [maxFileSize]="1000000">
+            <h5>EXAMENES MEDICOS</h5>
+            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" [multiple]="true"
+                accept="image/*" [maxFileSize]="1000000">
                 <ng-template pTemplate="content">
                     <ul *ngIf="uploadedFiles.length">
                         <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
@@ -11,8 +16,14 @@
                 </ng-template>
             </p-fileUpload>
 
+            <!--
             <h5>Basic</h5>
-            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" [maxFileSize]="1000000" (onUpload)="onBasicUpload()"></p-fileUpload>
+            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" [maxFileSize]="1000000"
+                (onUpload)="onBasicUpload()"></p-fileUpload>
+            -->
+
+            <h5>INSTRUCCIONES MÉDICAS</h5>
+            <textarea cols="195" rows="10" resize="none"></textarea><br />
 
         </div>
     </div>
