@@ -4,8 +4,8 @@
     <div class="grid p-fluid mt-3">
         <div class="field col-12 md:col-4">
             <span class="p-input-icon-right">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Código - DNI">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Código - DNI">
             </span>
         </div>
     </div>
@@ -53,18 +53,20 @@
 <div class="card">
     <h5>DATOS CITA</h5>
     <div class="grid p-fluid mt-3">
-        <div class= "field col-12 md:col-6">
+        <div class="field col-12 md:col-6">
             <h6>Seleccione su establecimiento</h6>
+            <!--
             <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
             </p-autoComplete>
-            
-        </div> 
-        <div class= "field col-12 md:col-6">
+            -->
+        </div>
+        <div class="field col-12 md:col-6">
             <h6>Seleccione su especialidades</h6>
-            <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+            <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries"
+                (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
             </p-autoComplete>
-        </div> 
-        
+        </div>
+
         <div class="field col-12 md:col-4">
             <h6>Seleccione la fecha propuesta</h6>
             <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
@@ -83,9 +85,9 @@
                 <label for="inputtext">Espcialidad</label>
             </span>
         </div>
-        
+
     </div>
-    
-    
-    
+
+
+
 </div>
