@@ -8,10 +8,14 @@ export class FloatLabelDemoComponent implements OnInit {
 
     countries: any[] = [];
 
+    distritos: any[] = [];
+
     cities: any[];
 
     filteredCountries: any[] = [];
+    filteredDistritos: any[] = [];
     selectedCountryAdvanced: any[] = [];
+    selectedDistritoAdvanced: any[] = [];
 
     value1: any;
 
@@ -51,6 +55,9 @@ export class FloatLabelDemoComponent implements OnInit {
         this.countryService.getCountries().then(countries => {
             this.countries = countries;
         });
+        this.countryService.getDistrito().then(distritos => {
+            this.distritos = distritos;
+        });
     }
 
     filterCountry(event: any) {
@@ -64,6 +71,19 @@ export class FloatLabelDemoComponent implements OnInit {
         }
 
         this.filteredCountries = filtered;
+    }
+
+    filterDistrito(event: any) {
+        const filtered: any[] = [];
+        const query = event.query;
+        for (let i = 0; i < this.distritos.length; i++) {
+            const distrito = this.distritos[i];
+            if (distrito.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(distrito);
+            }
+        }
+
+        this.filteredDistritos = filtered;
     }
 
     searchCountry(event: any) {
@@ -81,4 +101,21 @@ export class FloatLabelDemoComponent implements OnInit {
 
         this.filteredCountries = filtered;
     }
+
+    searchDistrito(event: any) {
+        // in a real application, make a request to a remote url with the query and
+        // return filtered results, for demo we filter at client side
+        const filtered: any[] = [];
+        const query = event.query;
+        // tslint:disable-next-line:prefer-for-of
+        for (let i = 0; i < this.distritos.length; i++) {
+            const distrito = this.distritos[i];
+            if (distrito.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(distrito);
+            }
+        }
+
+        this.filteredDistritos = filtered;
+    }
+
 }
