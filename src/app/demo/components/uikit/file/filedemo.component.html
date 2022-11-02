@@ -15,33 +15,32 @@
                     </ul>
                 </ng-template>
             </p-fileUpload>
-
-            <!--
+        </div>
+        <!--
             <h5>Basic</h5>
             <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" [maxFileSize]="1000000"
                 (onUpload)="onBasicUpload()"></p-fileUpload>
             -->
-            <div class="card">
-                <div class="grid p-fluid mt-3">
-                    <div class="field col-12">
-                        <h6>Ingrese el DNI del paciente</h6>
-                        <span class="p-input-icon-right">
-                            <i class="pi pi-search"></i>
-                            <input type="text" pInputText placeholder="Código - DNI">
-                        </span>
-                    </div>
-                </div>
-
-                <div class="field col-12">
-                    <h6>Ingrese la fecha de registro</h6>
-                    <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-                </div>
-
+        <div class="card">
+            <div class="field col-12 md:col-4">
+                <span class="p-input-icon-right">
+                    <h6>Ingrese el DNI del paciente</h6>
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Código - DNI">
+                </span>
             </div>
 
-            <h5>INSTRUCCIONES MÉDICAS</h5>
-            <textarea cols="100" rows="10" resize="none"></textarea><br />
+            <div class="field col-12">
+                <h6>Ingrese la fecha de registro</h6>
+                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
 
         </div>
+
+        <div class="card">
+            <h5>INSTRUCCIONES MÉDICAS</h5>
+            <textarea cols="100" rows="10" resize="none"></textarea><br />
+        </div>
+
     </div>
 </div>
