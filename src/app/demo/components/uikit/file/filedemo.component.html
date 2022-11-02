@@ -22,8 +22,21 @@
                 (onUpload)="onBasicUpload()"></p-fileUpload>
             -->
 
+            <div class="field col-12 md:col-4">
+                <h6>INGRESE DNI DEL PACIENTE</h6>
+                <span class="p-input-icon-right">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Código - DNI">
+                </span>
+            </div>
+
+            <div class= "field col-12">
+				<h6>Ingrese la fecha</h6>
+            	<p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+			</div>
+
             <h5>INSTRUCCIONES MÉDICAS</h5>
-            <textarea cols="195" rows="10" resize="none"></textarea><br />
+            <textarea cols="100" rows="10" resize="none"></textarea><br />
 
         </div>
     </div>
