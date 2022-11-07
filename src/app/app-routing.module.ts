@@ -1,7 +1,13 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
+import { CommonModule } from '@angular/common';
+import { FloatLabelDemoComponent } from './demo/components/uikit/floatlabel/floatlabeldemo.component';
+
+const routes: Routes = [
+    { path: '', component: FloatLabelDemoComponent }
+];
 
 @NgModule({
     imports: [
@@ -21,7 +27,8 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
-        ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
+        ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' }),
+        CommonModule
     ],
     exports: [RouterModule]
 })

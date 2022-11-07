@@ -1,8 +1,4 @@
-<style>
-    textarea {
-        resize: none;
-    }
-</style>
+
 <div class="grid">
     <div class="col-12">
         <div class="card">
@@ -16,17 +12,13 @@
                 </ng-template>
             </p-fileUpload>
         </div>
-        <!--
-            <h5>Basic</h5>
-            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" [maxFileSize]="1000000"
-                (onUpload)="onBasicUpload()"></p-fileUpload>
-            -->
+
         <div class="card">
             <div class="field col-12 md:col-4">
                 <span class="p-input-icon-right">
                     <h6>Ingrese el DNI del paciente</h6>
                     <i class="pi pi-search"></i>
-                    <input type="text" pInputText placeholder="Código - DNI">
+                    <input type="text" pInputText [(ngModel)]="value1" placeholder="Código - DNI"/>
                 </span>
             </div>
 

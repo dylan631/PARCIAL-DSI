@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from 'src/app/demo/service/country.service';
+import { DistritoService } from 'src/app/demo/service/Distrito.service';
+import { EspecialidadService } from 'src/app/demo/service/Especialidad.service';
+import { SunatService } from 'src/app/demo/service/sunat.service';
+import { Persona } from './floatlabeldemo.model';
+import axios from 'axios';
 
 @Component({
     templateUrl: './floatlabeldemo.component.html',
 })
 export class FloatLabelDemoComponent implements OnInit {
 
-    countries: any[] = [];
+    especialidades: any[] = [];
+    filteredEspecialidades: any[] = [];
+    selectedEspecialidadAdvanced: any[] = [];
 
     distritos: any[] = [];
-
-    cities: any[];
-
-    filteredCountries: any[] = [];
     filteredDistritos: any[] = [];
-    selectedCountryAdvanced: any[] = [];
     selectedDistritoAdvanced: any[] = [];
 
     value1: any;
@@ -41,37 +42,53 @@ export class FloatLabelDemoComponent implements OnInit {
 
     value12: any;
 
-    constructor(private countryService: CountryService) {
-        this.cities = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
-        ];
+    personas: Persona;
+    verificador: boolean;
+
+    constructor(private EspecialidadService: EspecialidadService, private DistritoService: DistritoService, private sSunat: SunatService) {
+        this.personas = new Persona("", "", "");
+        this.verificador = false;
     }
 
     ngOnInit() {
-        this.countryService.getEspecialidad().then(countries => {
-            this.countries = countries;
-        });
-        this.countryService.getDistrito().then(distritos => {
+        this.DistritoService.getList().then(distritos => {
             this.distritos = distritos;
+        });
+        this.EspecialidadService.getList().then(Especialidad => {
+            this.especialidades = Especialidad;
         });
     }
 
-    filterCountry(event: any) {
+
+    buscarDNI(dni: string) {
+        this.verificador = true;
+        this.sSunat.datosDNI(dni).subscribe(r => {
+            if (!r.success) {
+                alert("NO ENCONTRADO");
+            }
+            else {
+                this.personas.nombres=r.data.nombres
+                this.personas.apellidoPaterno=r.data.apellido_paterno
+                this.personas.apellidoMaterno=r.data.apellido_materno
+                console.log(r);
+            }
+        });
+    }
+
+    filterEspecialidad(event: any) {
         const filtered: any[] = [];
         const query = event.query;
-        for (let i = 0; i < this.countries.length; i++) {
-            const country = this.countries[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                filtered.push(country);
+        for (let i = 0; i < this.especialidades.length; i++) {
+            const especialidad = this.especialidades[i];
+            if (especialidad.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(especialidad);
             }
         }
 
-        this.filteredCountries = filtered;
+        this.filteredEspecialidades = filtered;
     }
+
+
 
     filterDistrito(event: any) {
         const filtered: any[] = [];
@@ -86,20 +103,20 @@ export class FloatLabelDemoComponent implements OnInit {
         this.filteredDistritos = filtered;
     }
 
-    searchCountry(event: any) {
+    searchEspecialidades(event: any) {
         // in a real application, make a request to a remote url with the query and
         // return filtered results, for demo we filter at client side
         const filtered: any[] = [];
         const query = event.query;
         // tslint:disable-next-line:prefer-for-of
-        for (let i = 0; i < this.countries.length; i++) {
-            const country = this.countries[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                filtered.push(country);
+        for (let i = 0; i < this.especialidades.length; i++) {
+            const especialidad = this.especialidades[i];
+            if (especialidad.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(especialidad);
             }
         }
 
-        this.filteredCountries = filtered;
+        this.filteredEspecialidades = filtered;
     }
 
     searchDistrito(event: any) {
@@ -117,5 +134,6 @@ export class FloatLabelDemoComponent implements OnInit {
 
         this.filteredDistritos = filtered;
     }
+
 
 }

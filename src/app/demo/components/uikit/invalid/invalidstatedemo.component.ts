@@ -43,7 +43,7 @@ export class InvalidStateDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.countryService.getCountries().then(countries => {
+        this.countryService.getList().then(countries => {
             this.countries = countries;
         });
     }
@@ -62,5 +62,5 @@ export class InvalidStateDemoComponent implements OnInit {
 
         this.filteredCountries = filtered;
     }
-    
+
 }

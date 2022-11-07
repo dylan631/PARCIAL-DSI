@@ -5,6 +5,8 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { FileDemoRoutingModule } from './filedemo-routing.module';
 import { FileDemoComponent } from './filedemo.component';
 import { CalendarModule } from "primeng/calendar";
+import { InputTextareaModule } from "primeng/inputtextarea";
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { CalendarModule } from "primeng/calendar";
 		FormsModule,
         CalendarModule,
 		FileDemoRoutingModule,
-		FileUploadModule
+		FileUploadModule,
+        InputTextareaModule,
+        InputTextModule
 	],
 	declarations: [FileDemoComponent],
 })

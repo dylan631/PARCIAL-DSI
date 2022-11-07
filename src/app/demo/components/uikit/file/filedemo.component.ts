@@ -8,6 +8,7 @@ import { MessageService } from 'primeng/api';
 export class FileDemoComponent {
 
     uploadedFiles: any[] = [];
+    value1: any;
 
     constructor(private messageService: MessageService) {}
 

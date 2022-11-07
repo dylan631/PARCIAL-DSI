@@ -1,25 +1,35 @@
 <div class="card">
     <h5>DATOS PACIENTE</h5>
     <p>Ingrese los datos del Paciente</p>
-    <div class="grid p-fluid mt-3">
+    <div class="grid p-fluid mt-10">
         <div class="field col-12 md:col-4">
             <span class="p-input-icon-right">
                 <i class="pi pi-search"></i>
-                <input type="text" pInputText placeholder="Código - DNI">
+                <input type="text" id="documento" name = "documento" pInputText placeholder="Código - DNI" #documento>
             </span>
         </div>
+        <div class="field col-12 md:col-1">
+            <button id="buscar" pButton type="button" label="Buscar" class="btn btn-primary" (click)="buscarDNI(documento.value)"></button>
+        </div>
     </div>
+
     <div class="grid p-fluid mt-3">
         <div class="field col-12 md:col-4">
             <span class="p-float-label">
-                <input type="text" id="nombres" pInputText [(ngModel)]="value1">
-                <label for="inputtext">Nombres</label>
+                <input type="text" id="nombres" pInputText [(ngModel)]="value1" disabled  >
+                <label for="inputtext" *ngIf = "verificador; else nombres">{{personas.nombres}}</label>
+                <ng-template #nombres>
+                    <label for="inputtext">Nombre</label>
+                </ng-template>
             </span>
         </div>
         <div class="field col-12 md:col-4">
             <span class="p-float-label">
-                <input type="text" id="apellidos" pInputText [(ngModel)]="value2">
-                <label for="inputtext">Apellidos</label>
+                <input type="text" id="apellidos" pInputText [(ngModel)]="value2" disabled>
+                <label for="inputtext" *ngIf = "verificador; else apellido">{{personas.apellidoPaterno}} {{personas.apellidoMaterno}}</label>
+                <ng-template #apellido>
+                    <label for="inputtext">Apellidos</label>
+                </ng-template>
             </span>
         </div>
         <div class="field col-12 md:col-4">
@@ -61,8 +71,8 @@
         </div>
         <div class="field col-12 md:col-6">
             <h6>Seleccione especialidad</h6>
-            <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="filteredCountries"
-                (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+            <p-autoComplete [(ngModel)]="selectedEspecialidadAdvanced" [suggestions]="filteredEspecialidades"
+                (completeMethod)="filterEspecialidad($event)" field="name" [dropdown]="true">
             </p-autoComplete>
         </div>
 
@@ -86,7 +96,5 @@
         </div>
 
     </div>
-
-
-
 </div>
+
